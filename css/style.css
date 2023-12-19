@@ -90,8 +90,9 @@ hr {
     transition-duration: 0.25s;
 }
 
-.ThemeButton, .SidebarButton {
+.StylizedButton, .ThemeButton, .SidebarButton {
     z-index: 2;
+    color: var(--theme-btn-custom-hover-color);
     background-color: var(--theme-btn-custom-bg-color);
     border: none;
     border-radius: 10px;
@@ -102,6 +103,9 @@ hr {
     font-size: 100%;
     transition-duration: 0.25s;
     cursor: pointer;
+}
+
+.ThemeButton, .SidebarButton {
     height: 40px;
     width: 40px;
     position: fixed;
@@ -119,9 +123,10 @@ hr {
     left: 10px;
 }
 
-.ThemeButton:hover, .SidebarButton:hover {
+.StylizedButton:hover, .ThemeButton:hover, .SidebarButton:hover {
     background-color: var(--theme-btn-custom-hover-bg-color);
     color: var(--theme-btn-custom-hover-color);
+    text-decoration: none;
     box-shadow: 0 12px 16px 0 var(--theme-btn-custom-hover-shadow-color-1), 0 17px 50px 0 var(--theme-btn-custom-hover-shadow-color-2);
     transform: scale(110%)
 }
