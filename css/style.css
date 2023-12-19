@@ -1,0 +1,207 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--theme-body-color);
+    margin: 60px;
+    background-color: var(--theme-body-bg-color);
+    overflow: auto;
+    transition-duration: 0.25s;
+}
+
+header {
+    background-color: var(--theme-header-bg-color);
+    color: var(--theme-header-color);
+    text-align: center;
+}
+
+main {
+    margin: 20px auto;
+    background-color: var(--theme-main-bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    color: var(--theme-h1-color);
+    text-decoration: underline;
+    transition-duration: 0.25s;
+}
+
+h2,
+h3 {
+    color: var(--theme-h2-h3-color);
+    transition-duration: 0.25s;
+}
+
+
+a {
+    color: var(--theme-a-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-shadow: 2px 2px 4px var(--theme-a-hover-shadow);
+    text-decoration: underline;
+}
+
+p {
+    margin-bottom: 1.25em;
+    transition-duration: 0.1s;
+}
+
+pre {
+    background-color: var(--theme-pre-bg-color);
+    color: var(--theme-pre-color);
+    padding: 10px;
+    border-radius: 8px;
+    overflow: auto;
+    transition-duration: 0.25s;
+}
+
+code {
+    font-family: 'Monaco', monospace;
+    font-size: 14px;
+    background-color: var(--theme-code-bg-color);
+    color: var(--theme-code-color);
+    padding: 4px 4px;
+    border-radius: 6px;
+    transition-duration: 0.25s;
+}
+
+blockquote {
+    border-left: 4px solid var(--theme-blockquote-border-left);
+    margin: 0;
+    padding: 0.1em 1em;
+    color: var(--theme-blockquote-color);
+    background-color: var(--theme-blockquote-bg-color);
+    border-radius: 4px;
+}
+
+ul,
+ol {
+    margin-bottom: 1.25em;
+}
+
+hr {
+    border: 0;
+    height: 3px;
+    background-color: var(--theme-hr-bg-color);
+    margin: 1em 0;
+    transition-duration: 0.25s;
+}
+
+.ThemeButton, .SidebarButton {
+    z-index: 2;
+    background-color: var(--theme-btn-custom-bg-color);
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    text-align: center;
+    text-decoration: solid;
+    display: inline-block;
+    font-size: 100%;
+    transition-duration: 0.25s;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+}
+
+.ThemeButton {
+    color: var(--theme-btn-theme-color);
+    top: 10px;
+    right: 10px;
+}
+
+.SidebarButton {
+    color: var(--theme-btn-sidebar-color);
+    top: 10px;
+    left: 10px;
+}
+
+.ThemeButton:hover, .SidebarButton:hover {
+    background-color: var(--theme-btn-custom-hover-bg-color);
+    color: var(--theme-btn-custom-hover-color);
+    box-shadow: 0 12px 16px 0 var(--theme-btn-custom-hover-shadow-color-1), 0 17px 50px 0 var(--theme-btn-custom-hover-shadow-color-2);
+    transform: scale(110%)
+}
+
+.ThemeButton img, .SidebarButton img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--theme-sidebar-bg-color);
+    overflow-x: auto;
+    transition: 0.25s;
+    color: var(--theme-sidebar-color);
+}
+
+@media screen and (max-width: 600px) {
+    #sidebar {
+        font-size: 2.8vw;
+    }
+}
+
+#sidebar h2 {
+    color: var(--theme-sidebar-h2-color);
+    padding-left: 1vw;
+    margin-left: 2vw;
+}
+
+#sidebar ul {
+    padding-left: 3vw;
+    margin-left: 0.1vw;
+}
+
+#sidebar a {
+    text-decoration: none;
+    /*font-size: 110%;*/
+    color: var(--theme-sidebar-a-color);
+    display: block;
+    transition: 0.3s;
+}
+
+#sidebar a:hover, #sidebar a:focus {
+    color: var(--theme-sidebar-a-hover-focus);
+    transition-duration: 0.1s;
+}
+
+#sidebar a:focus {
+    margin-left: 10px;
+}
+
+#sidebar-main {
+    transition: margin-left 0.5s;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    transition-duration: 0.25s;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--theme-scrollbar-thumb-bg-color);
+    border-radius: 5px;
+    transition-duration: 0.25s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--theme-scrollbar-thumb-hover-bg-color);
+    transition-duration: 0.25s;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+    background-color: var(--theme-scrollbar-track-corner-bg-color);
+    transition-duration: 0.25s;
+}

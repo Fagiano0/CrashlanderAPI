@@ -1,2 +1,2 @@
 # CrashlanderAPI
- API Documentation for the SM Crashlander mod.
+API Documentation for the SM Crashlander mod.
