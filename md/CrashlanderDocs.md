@@ -320,6 +320,33 @@ Checks if atleast one unit with this character uuid exists.
 
 --- 
 
+### **getUnitQuantity**
+```lua
+sm.crashlander.getUnitQuantity( uuid )
+```
+*Server only*  
+Checks how many units with this character uuid exist.
+
+**Arguments:**  
+* `uuid` [ **Uuid** ] The character uuid to check for.  
+
+**Returns:**  
+* [ **integer** ] How many units with this character uuid exist.  
+
+--- 
+
+### **killUnitsOfUuid**
+```lua
+sm.crashlander.killUnitsOfUuid( uuid )
+```
+*Server only*  
+Kills all units with this character uuid.
+
+**Arguments:**  
+* `uuid` [ **Uuid** ] The character uuid to check for.  
+
+--- 
+
 ### **getPlayerByName**
 ```lua
 sm.crashlander.getPlayerByName( name )

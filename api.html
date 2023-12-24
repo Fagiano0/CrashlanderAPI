@@ -48,6 +48,8 @@
     <li><a onclick="toggleNav()" href="#isserver">isServer</a></li>
     <li><a onclick="toggleNav()" href="#isinliquid">isInLiquid</a></li>
     <li><a onclick="toggleNav()" href="#doesunitexist">doesUnitExist</a></li>
+    <li><a onclick="toggleNav()" href="#getunitquantity">getUnitQuantity</a></li>
+    <li><a onclick="toggleNav()" href="#killunitsofuuid">killUnitsOfUuid</a></li>
     <li><a onclick="toggleNav()" href="#getplayerbyname">getPlayerByName</a></li>
     <li><a onclick="toggleNav()" href="#getrandomcolor">getRandomColor</a></li>
     <li><a onclick="toggleNav()" href="#getindexof">getIndexOf</a></li>
@@ -332,6 +334,28 @@
 <p><strong>Returns:</strong>  </p>
 <ul>
 <li>[ <strong>bool</strong> ] Whether a unit with this character uuid currently exists.</li>
+</ul>
+<hr>
+<h3 id="getunitquantity"><strong>getUnitQuantity</strong></h3>
+<pre><code class="language-lua">sm.crashlander.getUnitQuantity( uuid )
+</code></pre>
+<p><em>Server only</em><br>Checks how many units with this character uuid exist.</p>
+<p><strong>Arguments:</strong>  </p>
+<ul>
+<li><code>uuid</code> [ <strong>Uuid</strong> ] The character uuid to check for.</li>
+</ul>
+<p><strong>Returns:</strong>  </p>
+<ul>
+<li>[ <strong>integer</strong> ] How many units with this character uuid exist.</li>
+</ul>
+<hr>
+<h3 id="killunitsofuuid"><strong>killUnitsOfUuid</strong></h3>
+<pre><code class="language-lua">sm.crashlander.killUnitsOfUuid( uuid )
+</code></pre>
+<p><em>Server only</em><br>Kills all units with this character uuid.</p>
+<p><strong>Arguments:</strong>  </p>
+<ul>
+<li><code>uuid</code> [ <strong>Uuid</strong> ] The character uuid to check for.</li>
 </ul>
 <hr>
 <h3 id="getplayerbyname"><strong>getPlayerByName</strong></h3>
