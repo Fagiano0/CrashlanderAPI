@@ -1,0 +1,150 @@
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="stylesheet" rel="stylesheet" href="css/themes.css">
+    <link id="stylesheet" rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <title>Crashlander API</title>
+    
+    <button id="themeButton" class="ThemeButton" onclick="changeTheme()"><img id="themeImage" src="images/sun_light.png"></button>
+    <div id="sidebar-main">
+        <button id="sidebarButton" class="SidebarButton" onclick="toggleNav()">☰</button>
+    </div>
+    <script src="script.js"></script>
+</head>
+
+<div id="sidebar">
+    <h2><a href="index.html"><strong>← Back</strong></a></h2>
+    <ul>
+        <li><a onclick="toggleNav()" href="#adding-custom-recipes"><strong>Adding Custom Recipes</strong></a>
+        <li><a onclick="toggleNav()" href="#vanilla-craftbot-recipes"><strong>Vanilla Craftbot Recipes</strong></a>
+        <li><a onclick="toggleNav()" href="#crashlander-bench-specific-recipes"><strong>Crashlander Bench-Specific Recipes</strong></a>
+    </ul>
+    </li>
+</div>
+
+<!-- docs -->
+<h1 id="adding-custom-recipes">Adding Custom Recipes</h1>
+<p>Custom recipes can be added by mods in 2 different ways:  </p>
+<ul>
+<li>Vanilla craftbot recipes, which are also compatible with the Modded Craftbot Recipes mod.</li>
+<li>Crashlander bench-specific recipes, only compatible with Crashlander&#39;s benches.</li>
+</ul>
+<h1 id="vanilla-craftbot-recipes">Vanilla Craftbot Recipes</h1>
+<ul>
+<li>Such recipes in Crashlander show up in the &quot;Modded Craftbot&quot;, which unlocks only if a mod is enabled.</li>
+<li>Create new folder in your mod root folder named &quot;CraftingRecipes&quot;</li>
+<li>In there, create new file named &quot;craftbot.json&quot;</li>
+<li>Add your recipes to that file, example:<pre><code class="language-json">[
+    { //1st recipe
+        &quot;itemId&quot;: &quot;8c7efc37-cd7c-4262-976e-39585f8527bf&quot;, //uuid of the crafted item
+        &quot;extras&quot;: [ //extra items to receive after crafting (can be ommited)
+            { //extra item 1
+                &quot;itemId&quot;: &quot;798c2c81-1f8e-481b-8c32-b71b5dc5511a&quot;, //uuid of item given
+                &quot;quantity&quot;: 1 //amount of item given
+            }
+        ],
+        &quot;quantity&quot;: 1, //amount of the crafted item
+        &quot;craftTime&quot;: 32, //craft time in seconds (the crafter adds 3 more seconds, because of animations)
+        &quot;ingredientList&quot;: [ //recipe ingredients
+            { //ingredient 1
+                &quot;quantity&quot;: 10, //amount of item needed
+                &quot;itemId&quot;: &quot;1f7ac0bb-ad45-4246-9817-59bdf7f7ab39&quot; //uuid of item needed
+            },
+            { //ingredient 2
+                &quot;quantity&quot;: 2, //amount of item needed
+                &quot;itemId&quot;: &quot;f152e4df-bc40-44fb-8d20-3b3ff70cdfe3&quot; //uuid of item needed
+            }
+        ]
+    },
+    { //2nd recipe
+        &quot;itemId&quot;: &quot;8c7efc37-cd7c-4262-976e-39585f8527bf&quot;, //uuid of the crafted item
+        &quot;extras&quot;: [ //extra items to receive after crafting (can be ommited)
+            { //extra item 1
+                &quot;itemId&quot;: &quot;798c2c81-1f8e-481b-8c32-b71b5dc5511a&quot;, //uuid of item given
+                &quot;quantity&quot;: 1 //amount of item given
+            }
+        ],
+        &quot;quantity&quot;: 1, //amount of the crafted item
+        &quot;craftTime&quot;: 32, //craft time in seconds (the crafter adds 3 more seconds, because of animations)
+        &quot;ingredientList&quot;: [ //recipe ingredients
+            { //ingredient 1
+                &quot;quantity&quot;: 10, //amount of item needed
+                &quot;itemId&quot;: &quot;1f7ac0bb-ad45-4246-9817-59bdf7f7ab39&quot; //uuid of item needed
+            },
+            { //ingredient 2
+                &quot;quantity&quot;: 2, //amount of item needed
+                &quot;itemId&quot;: &quot;f152e4df-bc40-44fb-8d20-3b3ff70cdfe3&quot; //uuid of item needed
+            }
+        ]
+    }
+]
+</code></pre>
+</li>
+</ul>
+<h1 id="crashlander-bench-specific-recipes">Crashlander Bench-Specific Recipes</h1>
+<ul>
+<li>Each recipe shows up in the bench you assign it to</li>
+<li>Create new folder in your mod root folder named &quot;CraftingRecipes&quot;</li>
+<li>Inside that folder, create a new folder named &quot;Crashlander&quot;</li>
+<li>In there, create new file named:<ul>
+<li>&quot;anvil.json&quot; for &quot;Metalworking Bench&quot; recipes</li>
+<li>&quot;craftingbench.json&quot; for &quot;Workbench&quot; recipes</li>
+<li>&quot;scrapcraftingbench.json&quot; for &quot;Scrap Workbench&quot; recipes</li>
+<li>&quot;cookingbench.json&quot; for &quot;Cooking Bench&quot; recipes</li>
+<li>&quot;carpentingbench.json&quot; for &quot;Woodworking Bench&quot; recipes</li>
+<li>&quot;chemistrybench.json&quot; for &quot;Chemistry Bench&quot; recipes</li>
+<li>&quot;furnace.json&quot; for &quot;Smeltery&quot; recipes</li>
+</ul>
+</li>
+<li>Add your recipes to that file, example:<pre><code class="language-json">[
+    { //1st recipe
+        &quot;itemId&quot;: &quot;8c7efc37-cd7c-4262-976e-39585f8527bf&quot;, //uuid of the crafted item
+        &quot;extras&quot;: [ //extra items to receive after crafting (can be ommited)
+            { //extra item 1
+                &quot;itemId&quot;: &quot;798c2c81-1f8e-481b-8c32-b71b5dc5511a&quot;, //uuid of item given
+                &quot;quantity&quot;: 1 //amount of item given
+            }
+        ],
+        &quot;quantity&quot;: 1, //amount of the crafted item
+        &quot;craftTime&quot;: 32, //craft time in seconds (the crafter adds 3 more seconds, because of animations)
+        &quot;ingredientList&quot;: [ //recipe ingredients
+            { //ingredient 1
+                &quot;quantity&quot;: 10, //amount of item needed
+                &quot;itemId&quot;: &quot;1f7ac0bb-ad45-4246-9817-59bdf7f7ab39&quot; //uuid of item needed
+            },
+            { //ingredient 2
+                &quot;quantity&quot;: 2, //amount of item needed
+                &quot;itemId&quot;: &quot;f152e4df-bc40-44fb-8d20-3b3ff70cdfe3&quot; //uuid of item needed
+            }
+        ]
+    },
+    { //2nd recipe
+        &quot;itemId&quot;: &quot;8c7efc37-cd7c-4262-976e-39585f8527bf&quot;, //uuid of the crafted item
+        &quot;extras&quot;: [ //extra items to receive after crafting (can be ommited)
+            { //extra item 1
+                &quot;itemId&quot;: &quot;798c2c81-1f8e-481b-8c32-b71b5dc5511a&quot;, //uuid of item given
+                &quot;quantity&quot;: 1 //amount of item given
+            }
+        ],
+        &quot;quantity&quot;: 1, //amount of the crafted item
+        &quot;craftTime&quot;: 32, //craft time in seconds (the crafter adds 3 more seconds, because of animations)
+        &quot;ingredientList&quot;: [ //recipe ingredients
+            { //ingredient 1
+                &quot;quantity&quot;: 10, //amount of item needed
+                &quot;itemId&quot;: &quot;1f7ac0bb-ad45-4246-9817-59bdf7f7ab39&quot; //uuid of item needed
+            },
+            { //ingredient 2
+                &quot;quantity&quot;: 2, //amount of item needed
+                &quot;itemId&quot;: &quot;f152e4df-bc40-44fb-8d20-3b3ff70cdfe3&quot; //uuid of item needed
+            }
+        ]
+    }
+]
+</code></pre>
+</li>
+</ul>
+<!-- docs -->
+
+</html>
