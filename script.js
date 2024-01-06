@@ -1,15 +1,21 @@
-themeToggle = false;
-function changeTheme() {
+loadedTheme = localStorage.getItem('theme')
+updateTheme();
+
+function updateTheme() {
     var themeImage = document.getElementById('themeImage');
 
-    themeToggle = !themeToggle;
-    if(themeToggle) {
-        document.documentElement.setAttribute('data-theme', 'light');
-        themeImage.src = 'images/sun_dark.png';
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeImage.src = 'images/sun_light.png';
+    localStorage.setItem('theme', loadedTheme);
+    document.documentElement.setAttribute('data-theme', loadedTheme);
+    themeImage.src = 'images/sun_'+loadedTheme+'.png';
+}
+
+function changeTheme() {
+    if(loadedTheme == 'dark') {
+        loadedTheme = 'light';
+    } else if(loadedTheme == 'light') {
+        loadedTheme = 'dark';
     }
+    updateTheme();
 }
 
 isNavOpen = false;
