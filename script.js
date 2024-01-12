@@ -1,13 +1,18 @@
-storageTheme = localStorage.getItem('theme')
-currentTheme = storageTheme != null ? storageTheme : 'dark';
+currentTheme = localStorage.getItem('theme');
 updateTheme();
 
 function updateTheme() {
     var themeImage = document.getElementById('themeImage');
 
+    if(currentTheme == null || currentTheme == 'null') {
+        currentTheme = 'dark';
+    }
+
     localStorage.setItem('theme', currentTheme);
     document.documentElement.setAttribute('data-theme', currentTheme);
     themeImage.src = 'images/sun_'+currentTheme+'.png';
+
+    console.log('set theme:', currentTheme);
 }
 
 function changeTheme() {
