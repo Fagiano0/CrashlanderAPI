@@ -65,6 +65,7 @@
     <li><a onclick="toggleNav()" href="#equipmentcallback">EquipmentCallback</a></li>
     <li><a onclick="toggleNav()" href="#equipmentcallbackargument">EquipmentCallbackArgument</a></li>
     <li><a onclick="toggleNav()" href="#liquidfilter">LiquidFilter</a></li>
+    <li><a onclick="toggleNav()" href="#languagename">LanguageName</a></li>
     </ul>
     </li>
     </ul>
@@ -152,7 +153,7 @@
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>path</code> [ <strong>string</strong> ] The path to the json file containing the tags. The path has to use <code>$CONTENT_&lt;uuid of your mod&gt;</code> instead of <code>$CONTENT_DATA</code>, or else it will refer to the Crashlander files. (You can find the uuid of your mod in description.json in the root folder of your mod)</li>
-<li><code>language</code> [ <strong>LanguageName</strong> ] The language that the tags are for.</li>
+<li><code>language</code> [ <strong><a href="#languagename">LanguageName</a></strong> ] The language that the tags are for.</li>
 </ul>
 <hr>
 <h3 id=""></h3>
@@ -441,6 +442,7 @@
 <p>Any string from <a href="#equipmentslots">sm.crashlander.equipmentSlots</a>.</p>
 <hr>
 <h3 id="equipmentitem">EquipmentItem</h3>
+<p>Table contents:</p>
 <ul>
 <li><code>uuid</code> [ <strong>Uuid</strong> ]</li>
 <li><code>slot</code> [ <strong><a href="#equipmentslot">EquipmentSlot</a></strong> ]</li>
@@ -452,6 +454,7 @@
 </ul>
 <hr>
 <h3 id="equipmentstats">EquipmentStats</h3>
+<p>Table contents:</p>
 <ul>
 <li><code>damageReduction</code> [ <strong>number</strong>? ] The amount of damage that the equipment will block(in percents)</li>
 <li><code>oxygenMultiplier</code> [ <strong>number</strong>? ] The amount the oxygen will be multiplied by when equipped</li>
@@ -459,22 +462,41 @@
 </ul>
 <hr>
 <h3 id="equipmentcallback">EquipmentCallback</h3>
+<p>Table contents:</p>
 <ul>
 <li><code>callback</code> [ <strong>string</strong> ] The name of the function that will be called.</li>
 <li><code>object</code> [ <strong>Harvestable</strong> | <strong>ScriptableObject</strong> | <strong>Character</strong> | <strong>Tool</strong> | <strong>Interactable</strong> | <strong>Unit</strong> | <strong>Player</strong> | <strong>World</strong> ] The reference to the object that the function will be called on.</li>
 </ul>
 <hr>
 <h3 id="equipmentcallbackargument">EquipmentCallbackArgument</h3>
+<p>Table contents:</p>
 <ul>
 <li><code>state</code> [ <strong>boolean</strong> ]</li>
 <li><code>player</code> [ <strong>Player</strong> ]</li>
 </ul>
 <hr>
 <h3 id="liquidfilter">LiquidFilter</h3>
+<p>Table contents:</p>
 <ul>
 <li><code>water</code> [ <strong>boolean</strong>? ]</li>
 <li><code>chemical</code> [ <strong>boolean</strong>? ]</li>
 <li><code>oil</code> [ <strong>boolean</strong>? ]</li>
+</ul>
+<hr>
+<h3 id="languagename">LanguageName</h3>
+<p>Any of the following strings:</p>
+<ul>
+<li><code>&quot;Brazilian&quot;</code></li>
+<li><code>&quot;Chinese&quot;</code></li>
+<li><code>&quot;English&quot;</code></li>
+<li><code>&quot;French&quot;</code></li>
+<li><code>&quot;German&quot;</code></li>
+<li><code>&quot;Italian&quot;</code></li>
+<li><code>&quot;Japanese&quot;</code></li>
+<li><code>&quot;Korean&quot;</code></li>
+<li><code>&quot;Polish&quot;</code></li>
+<li><code>&quot;Russian&quot;</code></li>
+<li><code>&quot;Spanish&quot;</code></li>
 </ul>
 <hr>
 

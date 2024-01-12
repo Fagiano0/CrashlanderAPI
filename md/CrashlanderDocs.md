@@ -100,7 +100,7 @@ Allows for easily adding translations for any string.
 
 **Arguments:**
 * `path` [ **string** ] The path to the json file containing the tags. The path has to use `$CONTENT_<uuid of your mod>` instead of `$CONTENT_DATA`, or else it will refer to the Crashlander files. (You can find the uuid of your mod in description.json in the root folder of your mod)
-* `language` [ **LanguageName** ] The language that the tags are for.
+* `language` [ **[LanguageName](#languagename)** ] The language that the tags are for.
 
 ---
 
@@ -442,6 +442,7 @@ Any string from [sm.crashlander.equipmentSlots](#equipmentslots).
 ---
 
 ### EquipmentItem
+Table contents:
 * `uuid` [ **Uuid** ]
 * `slot` [ **[EquipmentSlot](#equipmentslot)** ]
 * `renderable` [ **string**? ]
@@ -453,6 +454,7 @@ Any string from [sm.crashlander.equipmentSlots](#equipmentslots).
 ---
 
 ### EquipmentStats
+Table contents:
 * `damageReduction` [ **number**? ] The amount of damage that the equipment will block(in percents)
 * `oxygenMultiplier` [ **number**? ] The amount the oxygen will be multiplied by when equipped
 * `waterMovementMultiplier` [ **number**? ] The amount the swim speed will be multiplied by when equpped
@@ -460,20 +462,39 @@ Any string from [sm.crashlander.equipmentSlots](#equipmentslots).
 ---
 
 ### EquipmentCallback
+Table contents:
 * `callback` [ **string** ] The name of the function that will be called.
 * `object` [ **Harvestable** | **ScriptableObject** | **Character** | **Tool** | **Interactable** | **Unit** | **Player** | **World** ] The reference to the object that the function will be called on.
 
 ---
 
 ### EquipmentCallbackArgument
+Table contents:
 * `state` [ **boolean** ]
 * `player` [ **Player** ]
 
 ---
 
 ### LiquidFilter
+Table contents:
 * `water` [ **boolean**? ]
 * `chemical` [ **boolean**? ]
 * `oil` [ **boolean**? ]
+
+---
+
+### LanguageName
+Any of the following strings:
+* `"Brazilian"`
+* `"Chinese"`
+* `"English"`
+* `"French"`
+* `"German"`
+* `"Italian"`
+* `"Japanese"`
+* `"Korean"`
+* `"Polish"`
+* `"Russian"`
+* `"Spanish"`
 
 ---
