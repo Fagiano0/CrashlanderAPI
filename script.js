@@ -1,19 +1,20 @@
-loadedTheme = localStorage.getItem('theme')
+storageTheme = localStorage.getItem('theme')
+currentTheme = storageTheme != null ? storageTheme : 'dark';
 updateTheme();
 
 function updateTheme() {
     var themeImage = document.getElementById('themeImage');
 
-    localStorage.setItem('theme', loadedTheme);
-    document.documentElement.setAttribute('data-theme', loadedTheme);
-    themeImage.src = 'images/sun_'+loadedTheme+'.png';
+    localStorage.setItem('theme', currentTheme);
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    themeImage.src = 'images/sun_'+currentTheme+'.png';
 }
 
 function changeTheme() {
-    if(loadedTheme == 'dark') {
-        loadedTheme = 'light';
-    } else if(loadedTheme == 'light') {
-        loadedTheme = 'dark';
+    if(currentTheme == 'dark') {
+        currentTheme = 'light';
+    } else if(currentTheme == 'light') {
+        currentTheme = 'dark';
     }
     updateTheme();
 }
