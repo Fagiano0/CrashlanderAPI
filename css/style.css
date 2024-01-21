@@ -3,6 +3,7 @@ body {
     line-height: 1.6;
     color: var(--theme-body-color);
     margin: 60px;
+    background-image: var(--theme-body-bg-image);
     background-color: var(--theme-body-bg-color);
     overflow: auto;
     transition-duration: 0.25s;
@@ -145,6 +146,7 @@ hr {
     top: 0;
     left: 0;
     background-color: var(--theme-sidebar-bg-color);
+    background-image: var(--theme-sidebar-bg-image);
     overflow-x: auto;
     transition: 0.25s;
     color: var(--theme-sidebar-color);

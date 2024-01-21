@@ -19,6 +19,8 @@ function changeTheme() {
     if(currentTheme == 'dark') {
         currentTheme = 'light';
     } else if(currentTheme == 'light') {
+        currentTheme = 'purple';
+    } else if(currentTheme == 'purple') {
         currentTheme = 'dark';
     }
     updateTheme();
