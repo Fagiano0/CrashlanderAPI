@@ -1,3 +1,4 @@
+//THEME
 currentTheme = localStorage.getItem('theme');
 updateTheme();
 

@@ -138,6 +138,16 @@ hr {
     border-radius: 5px;
 }
 
+.section-link {
+    color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.section-link:hover {
+    text-shadow: 0px 0px 3px var(--theme-a-color);
+}
+
 #sidebar {
     height: 100%;
     width: 0;
