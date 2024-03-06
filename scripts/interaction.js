@@ -21,4 +21,19 @@ document.addEventListener("DOMContentLoaded", function () {
             sectionLink.style.marginLeft = "0px";
         });
     });
+
+    const codeBlocks = document.querySelectorAll("pre code");
+    
+    codeBlocks.forEach(function(codeBlock) {
+        codeBlock.setAttribute('title', 'Copy');
+        codeBlock.addEventListener("click", function() {
+            const selection = window.getSelection();
+            const range = document.createRange();
+            range.selectNodeContents(codeBlock);
+            selection.removeAllRanges();
+            selection.addRange(range);
+            document.execCommand("copy");
+            selection.removeAllRanges();
+        });
+    });
 });

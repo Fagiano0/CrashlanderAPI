@@ -59,6 +59,13 @@ pre {
     transition-duration: 0.25s;
 }
 
+pre code:hover {
+    cursor: pointer;
+    color: 0px 0px 2px var(--theme-a-color);
+    text-shadow: 0px 0px 2px var(--theme-a-color);
+    transition-duration: 0.05s;
+}
+
 code {
     font-family: 'Monaco', monospace;
     font-size: 14px;
