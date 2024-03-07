@@ -134,6 +134,18 @@ See **[sm.crashlander.weatherTypes](#weathertypes)**.
 
 ---
 
+### **isRaining**
+```lua
+sm.crashlander.isRaining()
+``` 
+Returns whether the current weather has rain in it.  
+See **[sm.crashlander.weatherTypes](#weathertypes)**.  
+
+**Returns:**  
+* [ **integer** ] Whether it's raining or not.  
+
+---
+
 ### **weatherTypes**
 ```lua
 sm.crashlander.weatherTypes = {
@@ -142,6 +154,7 @@ sm.crashlander.weatherTypes = {
     cloudy = 2,
 	verycloudy = 3,
 	fog = 4,
+    storm = 5,
 }
 ```
 A table of all weather types.  
@@ -290,6 +303,20 @@ Returns whether the function is being run on the server.
 
 ---
 
+### **isActionBound**
+```lua
+sm.crashlander.isActionBound( action )
+```
+Returns whether the player has a keybind bound to the specified action.  
+
+**Arguments:**  
+* `action` [ **string** ] The action name, e.g. "Use", "Reload", "Tinker".  
+
+**Returns:**  
+* [ **boolean** ] Whether the action is bound or not.  
+
+---
+
 ### **isInLiquid**
 ```lua
 sm.crashlander.isInLiquid( areaTrigger, filter )
@@ -429,6 +456,35 @@ Unlike `table[number]`, this function gets items from tables using an index even
 
 **Returns:**
 * [ **any** ] The item.
+
+---
+
+### **areAnyOf**
+```lua
+sm.crashlander.areAnyOf( tbl, tbl2 )
+```
+Returns whether any item from tbl is present in tbl2.  
+
+**Arguments:**
+* `tbl` [ **table** ] The table.  
+* `tbl2` [ **table** ] The other table.  
+
+**Returns:**
+* [ **boolean** ] Whether any item from tbl is present in tbl2.  
+
+---
+
+### **getContainerItems**
+```lua
+sm.crashlander.getContainerItems( container )
+```
+Returns a table of all contents inside the specified container.  
+
+**Arguments:**
+* `container` [ **Container** ] The container.
+
+**Returns:**
+* [ **table** ] A table of all items inside the container.
 
 ---
 
