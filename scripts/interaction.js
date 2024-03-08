@@ -1,29 +1,29 @@
-//SECTION SELECTION
 document.addEventListener("DOMContentLoaded", function () {
+    //Section links
     const headings = document.querySelectorAll("h3");
     headings.forEach(function (heading) {
-        const sectionLink = document.createElement("span");
-        sectionLink.innerHTML = "📌";
-        sectionLink.classList.add("section-link");
-        sectionLink.addEventListener("click", function () {
-            const id = heading.getAttribute("id");
-            if (id) {
-                window.location.hash = id;
-            }
-        });
-        heading.appendChild(sectionLink);
-        heading.addEventListener("mouseenter", function () {
-            sectionLink.style.color = "white";
-            sectionLink.style.marginLeft = "5px";
-        });
-        heading.addEventListener("mouseleave", function () {
-            sectionLink.style.color = "transparent";
-            sectionLink.style.marginLeft = "0px";
-        });
+        if(heading.textContent != "") {
+            const sectionLink = document.createElement("span");
+            sectionLink.innerHTML = "📌";
+            sectionLink.classList.add("section-link");
+            sectionLink.addEventListener("click", function () {
+                const id = heading.getAttribute("id");
+                if (id) { window.location.hash = id; }
+            });
+            heading.appendChild(sectionLink);
+            heading.addEventListener("mouseenter", function () {
+                sectionLink.style.color = "white";
+                sectionLink.style.marginLeft = "5px";
+            });
+            heading.addEventListener("mouseleave", function () {
+                sectionLink.style.color = "transparent";
+                sectionLink.style.marginLeft = "0px";
+            });
+        }
     });
 
+    //Copy codeblock
     const codeBlocks = document.querySelectorAll("pre code");
-    
     codeBlocks.forEach(function(codeBlock) {
         codeBlock.setAttribute('title', 'Copy');
         codeBlock.addEventListener("click", function() {
