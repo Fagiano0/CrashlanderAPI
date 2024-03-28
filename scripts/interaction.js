@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     headings.forEach(function (heading) {
         if(heading.textContent != "") {
             const sectionLink = document.createElement("span");
-            sectionLink.innerHTML = "📌";
+            sectionLink.innerHTML = "🔗";
             sectionLink.classList.add("section-link");
             sectionLink.addEventListener("click", function () {
                 const id = heading.getAttribute("id");
@@ -23,17 +23,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     //Copy codeblock
-    const codeBlocks = document.querySelectorAll("pre code");
+    const codeBlocks = document.querySelectorAll("pre");
     codeBlocks.forEach(function(codeBlock) {
-        codeBlock.setAttribute('title', 'Copy');
-        codeBlock.addEventListener("click", function() {
-            const selection = window.getSelection();
-            const range = document.createRange();
-            range.selectNodeContents(codeBlock);
-            selection.removeAllRanges();
-            selection.addRange(range);
-            document.execCommand("copy");
-            selection.removeAllRanges();
+        var copyText, hr;
+        codeBlock.addEventListener("mouseenter", function() {
+            hr = document.createElement("hr");
+            copyText = document.createElement("span");
+            copyText.textContent = "📋Copy";
+            copyText.setAttribute('title', 'Copy code');
+            copyText.classList.add("code-copy");
+            copyText.addEventListener("click", function () {
+                const textToCopy = codeBlock.textContent.replace("\n📋Copy", "");
+                navigator.clipboard.writeText(textToCopy);
+                copyText.style.textShadow = "none";
+            });
+            codeBlock.appendChild(hr);
+            codeBlock.appendChild(copyText);
+        });
+        codeBlock.addEventListener("mouseleave", function() {
+            if(hr) hr.remove();
+            if(copyText) copyText.remove();
         });
     });
 });

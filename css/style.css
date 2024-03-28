@@ -59,13 +59,6 @@ pre {
     transition-duration: 0.25s;
 }
 
-pre code:hover {
-    cursor: pointer;
-    color: 0px 0px 2px var(--theme-a-color);
-    text-shadow: 0px 0px 2px var(--theme-a-color);
-    transition-duration: 0.05s;
-}
-
 code {
     font-family: 'Monaco', monospace;
     font-size: 14px;
@@ -96,6 +89,11 @@ hr {
     background-color: var(--theme-hr-bg-color);
     margin: 1em 0;
     transition-duration: 0.25s;
+}
+
+pre hr {
+    height: 2px;
+    margin: 0.4em 0;
 }
 
 .StylizedButton, .ThemeButton, .SidebarButton {
@@ -152,6 +150,16 @@ hr {
 }
 
 .section-link:hover {
+    text-shadow: 0px 0px 3px var(--theme-a-color);
+}
+
+.code-copy {
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.code-copy:hover {
     text-shadow: 0px 0px 3px var(--theme-a-color);
 }
 
