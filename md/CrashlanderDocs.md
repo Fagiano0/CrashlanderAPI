@@ -142,7 +142,7 @@ Returns whether the current weather has rain in it.
 See **[sm.crashlander.weatherTypes](#weathertypes)**.  
 
 **Returns:**  
-* [ **integer** ] Whether it's raining or not.  
+* [ **boolean** ] Whether it's raining or not.  
 
 ---
 
