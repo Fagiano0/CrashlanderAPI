@@ -253,6 +253,14 @@ The current version of crashlander as a string.
 
 ---
 
+### **hasSoundDLC**
+```lua
+sm.crashlander.hasSoundDLC()
+```
+Whether the Crashlander Audio Enhancement DLC is installed.  
+
+---
+
 ### **getCompletedAchievementCount**
 ```lua
 sm.crashlander.getCompletedAchievementCount()
@@ -332,6 +340,53 @@ Checks whether the given areaTrigger is inside a liquid.
 
 ---
 
+### **getMaterialIndex**
+```lua
+sm.crashlander.getMaterialIndex( matString )
+```
+Returns the index of a material from its string.  
+
+**Arguments:**  
+* `matString` [ **string** ] The material string.  
+
+**Returns:**  
+* [ **integer** ] The material index, or 9 (Metal) if not found.  
+
+---
+
+### **getCellPosition**
+```lua
+sm.crashlander.getCellPosition( x, y )
+```
+Gets cell coordinates from world coordinates.  
+
+**Arguments:**  
+* `x` [ **number** ] The world X position.  
+* `y` [ **number** ] The world y position.  
+
+**Returns:**  
+* [ **integer** ] The cell X position.  
+* [ **integer** ] The cell Y position.  
+
+---
+
+### **getBiomeAt**
+```lua
+sm.crashlander.getBiomeAt( x, y, asString )
+```
+*Server only*  
+Gets cell biome from world position.  
+
+**Arguments:**  
+* `x` [ **number** ] The X position.  
+* `y` [ **number** ] The y position.  
+* `asString` [ **boolean** ] Whether to return the biome as string, otherwise as index.  
+
+**Returns:**  
+* [ [**BiomeString**](#biomestring)? | **integer**? ] The biome index or string, *nil* if story location.  
+
+---
+
 ### **doesUnitExist**
 ```lua
 sm.crashlander.doesUnitExist( uuid )
@@ -378,13 +433,29 @@ Kills all units with this character uuid.
 ```lua
 sm.crashlander.getPlayerByName( name )
 ```
-Returns the player with the given name.
+Returns the player with the given name.  
 
 **Arguments:**  
 * `name` [ **string** ] The name of the player.
 
 **Returns:**  
 * [ **Player**? ] The player, *nil* if none is found.
+
+--- 
+
+### **getPlayersInRange**
+```lua
+sm.crashlander.getPlayersInRange( pos, distance, maxAmount )
+```
+Returns players that are in a certain distance around a provided point.  
+
+**Arguments:**  
+* `pos` [ **Vec3** ] The position to look around.
+* `distance` [ **number** ] The distance to look in.
+* `maxAmount` [ **integer**? ] Max amount of players to return, *nil* for infinite.
+
+**Returns:**  
+* [ **Player[]** ] Table of players in range.  
 
 ---
 
@@ -488,6 +559,21 @@ Returns a table of all contents inside the specified container.
 
 ---
 
+### **ordinalizeNumber**
+```lua
+sm.crashlander.ordinalizeNumber( num )
+```
+*Client only*  
+Returns the given number or number string with Ordinal Indication.  
+
+**Arguments:**
+* `num` [ **number** | **string** ] The number.
+
+**Returns:**
+* [ **string** ] The number string with Ordinal Indication.
+
+---
+
 ###
 # Documentation Classes
 Classes used purely for documenting specific values or table structures.
@@ -528,6 +614,19 @@ Table contents:
 Table contents:
 * `state` [ **boolean** ]
 * `player` [ **Player** ]
+
+---
+
+### BiomeString
+Any of the following strings:
+* `"TYPE_MEADOW"`
+* `"TYPE_FOREST"`
+* `"TYPE_DESERT"`
+* `"TYPE_FIELD"`
+* `"TYPE_BURNTFOREST"`
+* `"TYPE_AUTUMNFOREST"`
+* `"TYPE_TAYGA"`
+* `"TYPE_LAKE"`
 
 ---
 

@@ -225,6 +225,11 @@
 </code></pre>
 <p>The current version of crashlander as a string.</p>
 <hr>
+<h3 id="hassounddlc"><strong>hasSoundDLC</strong></h3>
+<pre><code class="language-lua">sm.crashlander.hasSoundDLC()
+</code></pre>
+<p>Whether the Crashlander Audio Enhancement DLC is installed.  </p>
+<hr>
 <h3 id="getcompletedachievementcount"><strong>getCompletedAchievementCount</strong></h3>
 <pre><code class="language-lua">sm.crashlander.getCompletedAchievementCount()
 </code></pre>
@@ -294,6 +299,49 @@
 <li>[ <strong>bool</strong> ] Whether the areaTrigger is in a liquid that&#39;s in the filter.</li>
 </ul>
 <hr>
+<h3 id="getmaterialindex"><strong>getMaterialIndex</strong></h3>
+<pre><code class="language-lua">sm.crashlander.getMaterialIndex( matString )
+</code></pre>
+<p>Returns the index of a material from its string.  </p>
+<p><strong>Arguments:</strong>  </p>
+<ul>
+<li><code>matString</code> [ <strong>string</strong> ] The material string.</li>
+</ul>
+<p><strong>Returns:</strong>  </p>
+<ul>
+<li>[ <strong>integer</strong> ] The material index, or 9 (Metal) if not found.</li>
+</ul>
+<hr>
+<h3 id="getcellposition"><strong>getCellPosition</strong></h3>
+<pre><code class="language-lua">sm.crashlander.getCellPosition( x, y )
+</code></pre>
+<p>Gets cell coordinates from world coordinates.  </p>
+<p><strong>Arguments:</strong>  </p>
+<ul>
+<li><code>x</code> [ <strong>number</strong> ] The world X position.  </li>
+<li><code>y</code> [ <strong>number</strong> ] The world y position.</li>
+</ul>
+<p><strong>Returns:</strong>  </p>
+<ul>
+<li>[ <strong>integer</strong> ] The cell X position.  </li>
+<li>[ <strong>integer</strong> ] The cell Y position.</li>
+</ul>
+<hr>
+<h3 id="getbiomeat"><strong>getBiomeAt</strong></h3>
+<pre><code class="language-lua">sm.crashlander.getBiomeAt( x, y, asString )
+</code></pre>
+<p><em>Server only</em><br>Gets cell biome from world position.  </p>
+<p><strong>Arguments:</strong>  </p>
+<ul>
+<li><code>x</code> [ <strong>number</strong> ] The X position.  </li>
+<li><code>y</code> [ <strong>number</strong> ] The y position.  </li>
+<li><code>asString</code> [ <strong>boolean</strong> ] Whether to return the biome as string, otherwise as index.</li>
+</ul>
+<p><strong>Returns:</strong>  </p>
+<ul>
+<li>[ <a href="#biomestring"><strong>BiomeString</strong></a>? | <strong>integer</strong>? ] The biome index or string, <em>nil</em> if story location.</li>
+</ul>
+<hr>
 <h3 id="doesunitexist"><strong>doesUnitExist</strong></h3>
 <pre><code class="language-lua">sm.crashlander.doesUnitExist( uuid )
 </code></pre>
@@ -332,7 +380,7 @@
 <h3 id="getplayerbyname"><strong>getPlayerByName</strong></h3>
 <pre><code class="language-lua">sm.crashlander.getPlayerByName( name )
 </code></pre>
-<p>Returns the player with the given name.</p>
+<p>Returns the player with the given name.  </p>
 <p><strong>Arguments:</strong>  </p>
 <ul>
 <li><code>name</code> [ <strong>string</strong> ] The name of the player.</li>
@@ -340,6 +388,21 @@
 <p><strong>Returns:</strong>  </p>
 <ul>
 <li>[ <strong>Player</strong>? ] The player, <em>nil</em> if none is found.</li>
+</ul>
+<hr>
+<h3 id="getplayersinrange"><strong>getPlayersInRange</strong></h3>
+<pre><code class="language-lua">sm.crashlander.getPlayersInRange( pos, distance, maxAmount )
+</code></pre>
+<p>Returns players that are in a certain distance around a provided point.  </p>
+<p><strong>Arguments:</strong>  </p>
+<ul>
+<li><code>pos</code> [ <strong>Vec3</strong> ] The position to look around.</li>
+<li><code>distance</code> [ <strong>number</strong> ] The distance to look in.</li>
+<li><code>maxAmount</code> [ <strong>integer</strong>? ] Max amount of players to return, <em>nil</em> for infinite.</li>
+</ul>
+<p><strong>Returns:</strong>  </p>
+<ul>
+<li>[ <strong>Player[]</strong> ] Table of players in range.</li>
 </ul>
 <hr>
 <h3 id="getrandomcolor"><strong>getRandomColor</strong></h3>
@@ -432,6 +495,19 @@
 <li>[ <strong>table</strong> ] A table of all items inside the container.</li>
 </ul>
 <hr>
+<h3 id="ordinalizenumber"><strong>ordinalizeNumber</strong></h3>
+<pre><code class="language-lua">sm.crashlander.ordinalizeNumber( num )
+</code></pre>
+<p><em>Client only</em><br>Returns the given number or number string with Ordinal Indication.  </p>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>num</code> [ <strong>number</strong> | <strong>string</strong> ] The number.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>[ <strong>string</strong> ] The number string with Ordinal Indication.</li>
+</ul>
+<hr>
 <h3 id="-3"></h3>
 <h1 id="documentation-classes">Documentation Classes</h1>
 <p>Classes used purely for documenting specific values or table structures.</p>
@@ -470,6 +546,19 @@
 <ul>
 <li><code>state</code> [ <strong>boolean</strong> ]</li>
 <li><code>player</code> [ <strong>Player</strong> ]</li>
+</ul>
+<hr>
+<h3 id="biomestring">BiomeString</h3>
+<p>Any of the following strings:</p>
+<ul>
+<li><code>&quot;TYPE_MEADOW&quot;</code></li>
+<li><code>&quot;TYPE_FOREST&quot;</code></li>
+<li><code>&quot;TYPE_DESERT&quot;</code></li>
+<li><code>&quot;TYPE_FIELD&quot;</code></li>
+<li><code>&quot;TYPE_BURNTFOREST&quot;</code></li>
+<li><code>&quot;TYPE_AUTUMNFOREST&quot;</code></li>
+<li><code>&quot;TYPE_TAYGA&quot;</code></li>
+<li><code>&quot;TYPE_LAKE&quot;</code></li>
 </ul>
 <hr>
 <h3 id="liquidfilter">LiquidFilter</h3>
