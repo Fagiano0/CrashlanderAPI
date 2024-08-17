@@ -259,6 +259,9 @@ sm.crashlander.hasSoundDLC()
 ```
 Whether the Crashlander Audio Enhancement DLC is installed.  
 
+**Returns:**  
+* [ **boolean** ] Whether it's installed or not.  
+
 ---
 
 ### **getCompletedAchievementCount**
